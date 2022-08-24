@@ -14,6 +14,7 @@ function ParticularTweet() {
 
 
     //fetch users
+    //fetch
     let tokenaccess = JSON.parse(localStorage.getItem("auth")).access
     //follow action
     useEffect(() => {
