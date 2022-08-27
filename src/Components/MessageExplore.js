@@ -13,7 +13,7 @@ function MessageExplore() {
     let tokenaccess = JSON.parse(localStorage.getItem("auth")).access
     //follow action
     useEffect(() => {
-        axios.get(`http://127.0.0.1:8000/explore/`, {
+        axios.get(`https://mini-twitter-app2.herokuapp.com/explore/`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + String(tokenaccess)

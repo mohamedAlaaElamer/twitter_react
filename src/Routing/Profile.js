@@ -19,7 +19,7 @@ function Profile() {
     useEffect(() => {
         let tokenaccess = JSON.parse(localStorage.getItem("auth")).access
         const interval = setInterval(() => {
-            axios.get(`http://127.0.0.1:8000/newuserprofile/${Params.username}`, {
+            axios.get(`https://mini-twitter-app2.herokuapp.com/newuserprofile/${Params.username}`, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': 'Bearer ' + String(tokenaccess)
@@ -43,7 +43,7 @@ function Profile() {
     //follow action
     const followaction = () => {
         let tokenaccess = JSON.parse(localStorage.getItem("auth")).access
-        axios.get(`http://127.0.0.1:8000/follow/${Params.username}`, {
+        axios.get(`https://mini-twitter-app2.herokuapp.com/follow/${Params.username}`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + String(tokenaccess)
@@ -62,7 +62,7 @@ function Profile() {
                         {!user.propic ? (
                             <img src="https://via.placeholder.com/350x150" alt="" style={{ marginLeft: "15px", borderRadius: "80px", width: "150px", height: "150px" }} />
                         ) : (
-                            <img src={`http://127.0.0.1:8000${user.propic}`} alt="" style={{ marginLeft: "15px", borderRadius: "80px", width: "150px", height: "150px" }} />
+                            <img src={`https://mini-twitter-app2.herokuapp.com${user.propic}`} alt="" style={{ marginLeft: "15px", borderRadius: "80px", width: "150px", height: "150px" }} />
                         )}
 
                         <div style={{ marginLeft: "25px" }}>

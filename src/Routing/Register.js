@@ -163,7 +163,7 @@ function Register() {
     const formHandle = (e) => {
         e.preventDefault();
         //checking state
-        axios.post('http://127.0.0.1:8000/createuser/', userReg, {
+        axios.post('https://mini-twitter-app2.herokuapp.com/createuser/', userReg, {
             headers: {
                 'Content-Type': 'application/json'
             }

@@ -18,7 +18,7 @@ function Likes() {
     //fetch tweets each sec
     useEffect(() => {
         const interval = setInterval(() => {
-            axios.get(`http://127.0.0.1:8000/like/${Params.username}`, {
+            axios.get(`https://mini-twitter-app2.herokuapp.com/like/${Params.username}`, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': 'Bearer ' + String(tokenaccess)

@@ -81,7 +81,7 @@ function Login() {
     const formHandle = (e) => {
         e.preventDefault();
         //checking state
-        axios.post('http://127.0.0.1:8000/api/token/', userLog, {
+        axios.post('https://mini-twitter-app2.herokuapp.com/api/token/', userLog, {
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -89,7 +89,7 @@ function Login() {
             .then((res) => {
                 console.log(res.data); if (res.status === 200) {
                     localStorage.setItem("auth", JSON.stringify(res.data));
-                    axios.get('http://127.0.0.1:8000/userinfo/', {
+                    axios.get('https://mini-twitter-app2.herokuapp.com/userinfo/', {
                         headers: {
                             'Content-Type': 'application/json',
                             'Authorization': 'Bearer ' + String(res.data.access)

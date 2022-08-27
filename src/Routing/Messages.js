@@ -19,7 +19,7 @@ function Messages() {
         if (params.username) {
 
             const interval = setInterval(() => {
-                axios.get(`http://127.0.0.1:8000/divmessages/${params.username}`, {
+                axios.get(`https://mini-twitter-app2.herokuapp.com/divmessages/${params.username}`, {
                     headers: {
                         'Accept': 'application/json',
                         "Content-Type": "multipart/form-data",
@@ -45,7 +45,7 @@ function Messages() {
         //checking state
         let from1 = new FormData(e.target)
         let tokenaccess = JSON.parse(localStorage.getItem("auth")).access
-        axios.post(`http://127.0.0.1:8000/sendmessageto/${params.username}`, from1, {
+        axios.post(`https://mini-twitter-app2.herokuapp.com/sendmessageto/${params.username}`, from1, {
             headers: {
                 'Accept': 'application/json',
                 "Content-Type": "multipart/form-data",
@@ -69,7 +69,7 @@ function Messages() {
                             <div>
                                 <div className="message d-flex" style={{ width: "50%", margin: "auto", marginTop: "10px", marginBottom: "10px" }}>
                                     {userimage ? (
-                                        <img src={`http://127.0.0.1:8000${userimage}`} style={{ width: "80px", height: "80px", borderRadius: "80px", marginLeft: "15px", marginRight: "15px" }} />
+                                        <img src={`https://mini-twitter-app2.herokuapp.com${userimage}`} style={{ width: "80px", height: "80px", borderRadius: "80px", marginLeft: "15px", marginRight: "15px" }} />
                                     ) : (
                                         <img src="https://via.placeholder.com/350x150" style={{ width: "80px", height: "80px", borderRadius: "80px", marginLeft: "15px", marginRight: "15px" }} />
                                     )}

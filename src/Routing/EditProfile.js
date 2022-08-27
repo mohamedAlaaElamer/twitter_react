@@ -87,7 +87,7 @@ function EditProfile() {
 
     let tokenaccess = JSON.parse(localStorage.getItem("auth")).access
     useEffect(() => {
-        axios.get(`http://127.0.0.1:8000/editprofileinfo/${JSON.parse(localStorage.getItem("userinfo")).username}`, {
+        axios.get(`https://mini-twitter-app2.herokuapp.com/editprofileinfo/${JSON.parse(localStorage.getItem("userinfo")).username}`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + String(tokenaccess)
@@ -104,7 +104,7 @@ function EditProfile() {
         if (image) {
             console.log("chageimage")
             let form = new FormData(e.target)
-            axios.post('http://127.0.0.1:8000/editprofile/', form, {
+            axios.post('https://mini-twitter-app2.herokuapp.com/editprofile/', form, {
                 headers: {
                     'Accept': 'application/json',
                     "Content-Type": "multipart/form-data",
@@ -115,7 +115,7 @@ function EditProfile() {
                 .catch((err) => console.log(err))
         }
         else {
-            axios.post('http://127.0.0.1:8000/withoutimage/', Data, {
+            axios.post('https://mini-twitter-app2.herokuapp.com/withoutimage/', Data, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': 'Bearer ' + String(tokenaccess)
@@ -137,7 +137,7 @@ function EditProfile() {
                         <form onSubmit={e => chageprofile(e)} className="row g-3">
                             <div className="d-flex align-items-center" style={{ margin: "70px", position: 'relative' }}>
                                 {JSON.parse(localStorage.getItem("userinfo")).propic ? (
-                                    <img src={`http://127.0.0.1:8000${JSON.parse(localStorage.getItem("userinfo")).propic}`} alt="" style={{ marginLeft: "15px", borderRadius: "80px", width: "150px", height: "150px" }} />
+                                    <img src={`https://mini-twitter-app2.herokuapp.com${JSON.parse(localStorage.getItem("userinfo")).propic}`} alt="" style={{ marginLeft: "15px", borderRadius: "80px", width: "150px", height: "150px" }} />
                                 ) : (
                                     <img src="https://via.placeholder.com/350x150" alt="" style={{ marginLeft: "15px", borderRadius: "80px", width: "150px", height: "150px" }} />
                                 )}
@@ -190,13 +190,13 @@ function EditProfile() {
 
                             <div className="mb-3">
                                 <label htmlFor="formGroupExampleInput" className="form-label" style={{ float: "left" }}>Bio</label>
-                                <textarea className="form-control" placeholder='Let Others Know About You'  style={{ width: "100%", height: "200px", resize: "none", borderRadius: "25px", textAlign: "center", fontSize: "25px" }} name='bio' value={Data.bio} onChange={e => userHandle(e)} />
+                                <textarea className="form-control" placeholder='Let Others Know About You' style={{ width: "100%", height: "200px", resize: "none", borderRadius: "25px", textAlign: "center", fontSize: "25px" }} name='bio' value={Data.bio} onChange={e => userHandle(e)} />
                             </div>
                             <div>
-                                
-                            <input style={{width : "45%", marginRight : "5%"}} className="btn  btn-light" type="submit" value='Close' onClick={(e) => { e.preventDefault(); window.location.href = "/home" }} />
 
-                            <input style={{width : "45%" ,marginLeft : "5%"}} className="btn btn-info text-light" type="submit" disabled={errors.FirstNameError || errors.LastNameError} value='Save' />
+                                <input style={{ width: "45%", marginRight: "5%" }} className="btn  btn-light" type="submit" value='Close' onClick={(e) => { e.preventDefault(); window.location.href = "/home" }} />
+
+                                <input style={{ width: "45%", marginLeft: "5%" }} className="btn btn-info text-light" type="submit" disabled={errors.FirstNameError || errors.LastNameError} value='Save' />
                             </div>
 
 

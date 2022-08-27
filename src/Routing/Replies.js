@@ -18,7 +18,7 @@ function Replies() {
     //fetch tweets each sec
     useEffect(() => {
         const interval = setInterval(() => {
-            axios.get(`http://127.0.0.1:8000/reply/${Params.username}`, {
+            axios.get(`https://mini-twitter-app2.herokuapp.com/reply/${Params.username}`, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': 'Bearer ' + String(tokenaccess)
@@ -40,7 +40,7 @@ function Replies() {
 
     //follow action
     const followaction = () => {
-        axios.get(`http://127.0.0.1:8000/follow/${Params.username}`, {
+        axios.get(`https://mini-twitter-app2.herokuapp.com/follow/${Params.username}`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + String(tokenaccess)
@@ -59,7 +59,7 @@ function Replies() {
                         {!user.propic ? (
                             <img src="https://via.placeholder.com/350x150" alt="" style={{ marginLeft: "15px", borderRadius: "80px", width: "150px", height: "150px" }} />
                         ) : (
-                            <img src={`http://127.0.0.1:8000${user.propic}`} alt="" style={{ marginLeft: "15px", borderRadius: "80px", width: "150px", height: "150px" }} />
+                            <img src={`https://mini-twitter-app2.herokuapp.com${user.propic}`} alt="" style={{ marginLeft: "15px", borderRadius: "80px", width: "150px", height: "150px" }} />
                         )}
 
                         <div style={{ marginLeft: "25px" }}>

@@ -27,7 +27,7 @@ function Tweets(Props) {
             let from1 = new FormData()
             from1.append('message', reply)
             let tokenaccess = JSON.parse(localStorage.getItem("auth")).access
-            axios.post(`http://127.0.0.1:8000/createreply/${Props.content.id}`, from1, {
+            axios.post(`https://mini-twitter-app2.herokuapp.com/createreply/${Props.content.id}`, from1, {
                 headers: {
                     'Accept': 'application/json',
                     "Content-Type": "multipart/form-data",
@@ -63,7 +63,7 @@ function Tweets(Props) {
     //like form handler
     const likehandler = () => {
         let tokenaccess = JSON.parse(localStorage.getItem("auth")).access
-        axios.post(`http://127.0.0.1:8000/tweetaction/${Props.content.id}`, { "action": "like" }, {
+        axios.post(`https://mini-twitter-app2.herokuapp.com/tweetaction/${Props.content.id}`, { "action": "like" }, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + String(tokenaccess)
@@ -82,14 +82,14 @@ function Tweets(Props) {
             }}>
                 <div className="user_info d-flex p-4" >
                     {Props.content.userpic && (
-                        <Link to={`${Props.content.username}`}><img src={`http://127.0.0.1:8000${Props.content.userpic}`} alt="Cinque Terre" style={{ maxWidth: "100%", width: "60px", height: "60px", borderRadius: "30px" }} /></Link>
+                        <Link to={`${Props.content.username}`}><img src={`https://mini-twitter-app2.herokuapp.com${Props.content.userpic}`} alt="Cinque Terre" style={{ maxWidth: "100%", width: "60px", height: "60px", borderRadius: "30px" }} /></Link>
                     )}
                     <h3 className="ms-2">{Props.content.username}</h3>
                 </div>
                 <div className="content mb-2 text-center">
                     <p className="h3">{Props.content.content}</p>
                     {Props.content.image && (
-                        <img src={`http://127.0.0.1:8000${Props.content.image}`} className="rounded mx-auto" alt="Cinque Terre" width="50%" />
+                        <img src={`https://mini-twitter-app2.herokuapp.com${Props.content.image}`} className="rounded mx-auto" alt="Cinque Terre" width="50%" />
                     )}
                 </div>
 
@@ -98,7 +98,7 @@ function Tweets(Props) {
                         <div className="user_info d-flex p-2">
                             {Props.content.parent_user_image && (
                                 <Link to={`${Props.content.parent_user}`}>
-                                    <img src={`http://127.0.0.1:8000${Props.content.parent_user_image}`} alt="Cinque Terre" style={{ maxWidth: "100%", width: "60px", height: "60px", borderRadius: "30px" }} />
+                                    <img src={`https://mini-twitter-app2.herokuapp.com${Props.content.parent_user_image}`} alt="Cinque Terre" style={{ maxWidth: "100%", width: "60px", height: "60px", borderRadius: "30px" }} />
                                 </Link>
                             )}
                             <h3 className="ms-2">{Props.content.parent_user}</h3>
@@ -107,7 +107,7 @@ function Tweets(Props) {
                             <p className="h3">{Props.content.parent_content}</p>
 
                             {Props.content.parent_image && (
-                                <img src={`http://127.0.0.1:8000${Props.content.parent_image}`} className="rounded mx-auto" alt="Cinque Terre" width="50%" />
+                                <img src={`https://mini-twitter-app2.herokuapp.com${Props.content.parent_image}`} className="rounded mx-auto" alt="Cinque Terre" width="50%" />
                             )}
 
                         </div>
@@ -148,7 +148,7 @@ function Tweets(Props) {
                                     <>
                                         <div key={e.id} className="p-2 bg-light border h5 d-flex align-items-center rounded w-75 mx-auto mt-3">
                                             {e.propic ? (
-                                                <img src={`http://127.0.0.1:8000${e.propic}`} style={{ width: "80px", height: "80px", borderRadius: "80px", marginRight: "20px" }} />
+                                                <img src={`https://mini-twitter-app2.herokuapp.com${e.propic}`} style={{ width: "80px", height: "80px", borderRadius: "80px", marginRight: "20px" }} />
                                             ) : (
                                                 <img src="https://via.placeholder.com/350x150" style={{ width: "80px", height: "80px", borderRadius: "80px", marginRight: "20px" }} />
                                             )}

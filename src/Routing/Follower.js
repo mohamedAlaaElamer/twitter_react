@@ -16,7 +16,7 @@ function Follower() {
     //follow action
     useEffect(() => {
         const interval = setInterval(() => {
-            axios.get(`http://127.0.0.1:8000/follower/${params.username}`, {
+            axios.get(`https://mini-twitter-app2.herokuapp.com/follower/${params.username}`, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': 'Bearer ' + String(tokenaccess)

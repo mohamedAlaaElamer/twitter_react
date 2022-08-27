@@ -36,7 +36,7 @@ function NavBar() {
 
 
         const interval = setInterval(() => {
-            axios.get(`http://127.0.0.1:8000/getallmessages/`, {
+            axios.get(`https://mini-twitter-app2.herokuapp.com/getallmessages/`, {
                 headers: {
                     'Accept': 'application/json',
                     "Content-Type": "multipart/form-data",
@@ -112,7 +112,7 @@ function NavBar() {
                                 return (
                                     <div className="message d-flex" onClick={() => { window.location.href = `/message/${e.from}` }}>
                                         {e.propic ? (
-                                            <img src={`http://127.0.0.1:8000${e.propic}`} style={{ width: "80px", height: "80px", borderRadius: "80px", marginLeft: "15px", marginRight: "15px" }} />
+                                            <img src={`https://mini-twitter-app2.herokuapp.com${e.propic}`} style={{ width: "80px", height: "80px", borderRadius: "80px", marginLeft: "15px", marginRight: "15px" }} />
                                         ) : (
                                             <img src="https://via.placeholder.com/350x150" style={{ width: "80px", height: "80px", borderRadius: "80px", marginLeft: "15px", marginRight: "15px" }} />
                                         )}
@@ -135,7 +135,7 @@ function NavBar() {
                                 return (
                                     <div className="message d-flex" onClick={() => { window.location.href = `/tweet/${e.id}` }}>
                                         {e.propic ? (
-                                            <img src={`http://127.0.0.1:8000${e.propic}`} style={{ width: "80px", height: "80px", borderRadius: "80px", marginLeft: "15px", marginRight: "15px" }} />
+                                            <img src={`https://mini-twitter-app2.herokuapp.com${e.propic}`} style={{ width: "80px", height: "80px", borderRadius: "80px", marginLeft: "15px", marginRight: "15px" }} />
                                         ) : (
                                             <img src="https://via.placeholder.com/350x150" style={{ width: "80px", height: "80px", borderRadius: "80px", marginLeft: "15px", marginRight: "15px" }} />
                                         )}
@@ -164,7 +164,7 @@ function NavBar() {
                         <div className="user_info d-flex nav-link">
                             <Link className="nav-link text-light d-flex align-items-center" to={`/${JSON.parse(localStorage.getItem("userinfo")).username}`}>
                                 {userPropic && (
-                                    <img style={{ maxWidth: "100%", width: "50px", height: "50px", borderRadius: "30px" }} src={`http://127.0.0.1:8000${userPropic}`} alt="Cinque Terre" />
+                                    <img style={{ maxWidth: "100%", width: "50px", height: "50px", borderRadius: "30px" }} src={`https://mini-twitter-app2.herokuapp.com${userPropic}`} alt="Cinque Terre" />
                                 )}
                                 <h3 className="ms-2 text-light">{JSON.parse(localStorage.getItem("userinfo")).username}</h3>
                             </Link>

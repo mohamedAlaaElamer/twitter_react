@@ -14,12 +14,11 @@ function ParticularTweet() {
 
 
     //fetch users
-    //fetch
     let tokenaccess = JSON.parse(localStorage.getItem("auth")).access
     //follow action
     useEffect(() => {
         const interval = setInterval(() => {
-            axios.get(`http://127.0.0.1:8000/gettweetbyid/${params.id}`, {
+            axios.get(`https://mini-twitter-app2.herokuapp.com/gettweetbyid/${params.id}`, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': 'Bearer ' + String(tokenaccess)
